@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+#menu{
+    display: flex;
+    flex: 2;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+ul{
+    display: flex;
+    gap: 20px;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.input-search{
+    display: flex;
+    flex: 3;
+    padding: 0 30px;
+}
+#search{
+    background: rgb(226, 226, 226);
+    padding: 10px;
+    border-radius: 0 15px 15px 0;
+    border: none;
+}
+input[type="text"]{
+    padding: 10px;
+    width: 90%;
+    border-radius: 15px 0 0 15px;
+    background: rgb(226, 226, 226);
+    outline: none;
+    border: none;
+}
+.account-chart{
+    flex: 0.5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.introduction{
+    background: #691FF0;
+    display: flex;
+    align-items: center;
+    color: white;
+    height: 40vh;
+    justify-content: center;
+}
+#discount{
+    height: 40vh;
+    background-image: url("../images/discounr.png");
+    background-position-y: -50px;
+    background-size: cover;
+}
+.container{
+    padding: 20px;
+    background: rgb(202, 202, 202);
+    display: grid;
+    gap: 10px;
+
+}
+.card-container{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+}
+.card{
+    background-color: rgb(255, 255, 255);
+    height: 350px;
+    width: 250px;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.image{
+    height: 200px;
+    width: 200px;
+}
+.card-body{
+    padding-top: 20px;
+    display: grid;
+    gap: 10px;
+}
+button{
+    padding: 10px;
+    width: 80px;
+    color: white;
+    background-color: #201A74;
+    border-radius: 15px;
+    border: none;
+
+}
+footer{
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
