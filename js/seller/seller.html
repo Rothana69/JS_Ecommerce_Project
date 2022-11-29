@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaniShop</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav>
+        <div id="menu">
+            <img src="../../images/logo.png" alt="">
+            <ul>
+                <li><a href="../../index.html">HOME</a></li>
+                <li><a href="../product/product.html">PRODUCT</a></li>
+                <li><a href="">ABOUT</a></li>
+            </ul>
+        </div>
+        <div class="input-search">
+            <input id="search-bar" type="text" placeholder="Search here">
+            <span id="search" class="fa fa-search"></span>
+        </div>
+        <div class="account-chart">
+            <div class="dropdown">
+                <span class="fa fa-user-circle-o fa-2x dropbtn chart" onmouseover="dropDownUser()"></span>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#">Login/Register</a>
+                  <a href="../costomer/costomer.html">Costomer</a>
+                  <a href="../seller/seller.html">Seller</a>
+                </div>
+            </div>
+            <span class="fa fa-bell-o fa-2x chart"></span>
+            <span class="fa fa-shopping-cart fa-2x chart"></span>
+        </div>
+    </nav>
+    <div class="product-contanter">
+        <h2>Products List</h2>
+        <button id="add-product" onclick="onAddBtn()">
+            <h4>Add Product</h4>
+        </button>
+        <div id="product-dialog">
+            <dialog open>
+                <header>ADD NEW PRODUCT</header>
+                <section>
+                    <label>Name of product</label>
+                    <input class="input" type="text" placeholder="type here" />
+                    
+                    <label>Description</label>
+                    <input class="input" type="text" placeholder="type here">
+
+                    <label>Price</label>
+                    <input class="input" type="number" placeholder="type here">
+                    
+                    <label>Currency</label>
+                    <input class="input" type="text" placeholder="type here">
+                    
+                    <label>Image</label>
+                    <input type="file" placeholder="type here">
+                </section>
+                <menu>
+                    <!-- When clicking on button,  call the right function  -->
+                    <button onclick="onCancel()">Cancel</button>
+        
+                    <!-- When clicking on button,  call the right function  -->
+                    <button onclick="onCreate()">Add</button>
+                </menu>
+            </dialog>
+          </div>
+    </div>
+</body>
+<footer>
+    <div><img id="footer-img" src="../../images/logo.png" alt=""></div>
+    <ul class="list">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../product/product.html">Product</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+    </ul>
+</footer>
+<script src="js/seller.js"></script>
+</html>

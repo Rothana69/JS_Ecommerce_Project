@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NaniShop</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <nav>
@@ -14,89 +14,65 @@
             <img src="images/logo.png" alt="">
             <ul>
                 <li><a href="index.html">HOME</a></li>
-                <li><a href="js/costomer/costomer.html">PRODUCT</a></li>
+                <li><a href="js/product/product.html">PRODUCT</a></li>
                 <li><a href="">ABOUT</a></li>
             </ul>
         </div>
         <div class="input-search">
-            <input type="text" placeholder="Search here">
-            <span id="search" class="material-icons">search</span>
+            <input id="search-bar" type="text" placeholder="Search here">
+            <span id="search" class="fa fa-search"></span>
         </div>
         <div class="account-chart">
-            <span class="material-icons">notifications</span>
-            <span class="material-icons">person</span>
-            <span class="material-icons">shopping_cart</span>
+            <div class="dropdown">
+                <span class="fa fa-user-circle-o fa-2x dropbtn chart" onmouseover="dropDownUser()"></span>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#">Login/Register</a>
+                  <a href="js/costomer/costomer.html">Costomer</a>
+                  <a href="js/seller/seller.html">Seller</a>
+                </div>
+            </div>
+            <span class="fa fa-bell-o fa-2x chart"></span>
+            <span class="fa fa-shopping-cart fa-2x chart"></span>
         </div>
     </nav>
     <div id="discount">
     </div>
     <div class="container">
-        <a href=""><span> Show all</span></a>
+        <div class="title">
+            <h2>OUR BEST PRODUCT</h2>
+            <a href="js/product/product.html"><span> Show all</span></a>
+        </div>
         <div class="card-container">
+
+            
             <div class="card">
                 <img class="image" src="images/iphone.jpg" alt="">
                 <div class="card-body">
                     <h3 class="card-title">IPHONE 14pro</h3>
-                    <p>1440$</p>
-                    <button>Detail</button>
-                </div>
-            </div>
-            <div class="card">
-                <img class="image" src="images/iphone.jpg" alt="">
-                <div class="card-body">
-                    <h3 class="card-title">IPHONE 14pro</h3>
-                    <p>1440$</p>
-                    <button>Detail</button>
-                </div>
-            </div>
-            <div class="card">
-                <img class="image" src="images/iphone.jpg" alt="">
-                <div class="card-body">
-                    <h3 class="card-title">IPHONE 14pro</h3>
-                    <p>1440$</p>
-                    <button>Detail</button>
-                </div>
-            </div>
-            <div class="card">
-                <img class="image" src="images/iphone.jpg" alt="">
-                <div class="card-body">
-                    <h3 class="card-title">IPHONE 14pro</h3>
-                    <p>1440$</p>
-                    <button type="button">Detail</button>
-                </div>
-            </div>
-            <div class="card-container">
-                <div class="card">
-                    <img class="image" src="images/iphone.jpg" alt="">
-                    <div class="card-body">
-                        <h3 class="card-title">IPHONE 14pro</h3>
-                        <p>1440$</p>
-                        <button>Detail</button>
+                    <p>Price:<span class="price">1440$</span></p>
+                    <div>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
                     </div>
+                    <button class="detail" type="button">Detail</button>
                 </div>
             </div>
+
+
         </div>
     </div>
-    
 </body>
 <footer>
     <div><img id="footer-img" src="images/logo.png" alt=""></div>
     <ul class="list">
-        <li>
-        <a href="index.html">Home</a>
-        </li>
-        <li>
-        <a href="#">Product</a>
-        </li>
-        <li>
-        <a href="#">About</a>
-        </li>
-        <li>
-        <a href="#">Terms</a>
-        </li>
-        <li>
-        <a href="#">Privacy Policy</a>
-        </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="js/product/product.html">Product</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy Policy</a></li>
     </ul>
 </footer>
 <script src="js/main.js"></script>
