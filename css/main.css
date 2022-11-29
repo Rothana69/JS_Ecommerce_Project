@@ -257,16 +257,13 @@ input:focus {
     justify-self: flex-end;
     cursor: pointer;
 }
-.product-list{
-    background: rgb(255, 166, 166);
-    display: flex;
-    justify-content: space-between;
+#product-add{
+    background: rgb(184, 15, 15);
 }
-.list-item{
-    padding: 20px;
-    font-size: 20px;
-    font-weight: bold;
+.card-seller{
+    display: flex; 
 }
-.card-product{
-    background: rgb(13, 238, 51);
+.product-card{
+    background: rgb(77, 100, 204);
+    
 }

@@ -37,7 +37,7 @@
     </nav>
     <div class="product-contanter">
         <h2>Products List</h2>
-        <button id="add-product" onclick="onAddBtn()">
+        <button id="add-product" onclick="onAdd()">
             <h4>Add Product</h4>
         </button>
         <div id="product-dialog">
@@ -45,29 +45,42 @@
                 <header>ADD NEW PRODUCT</header>
                 <section>
                     <label>Name of product</label>
-                    <input class="input" type="text" placeholder="type here" />
+                    <input id="name-product" class="input" type="text" placeholder="type here" />
                     
                     <label>Description</label>
-                    <input class="input" type="text" placeholder="type here">
+                    <input id="description-input" class="input" type="text" placeholder="type here">
 
                     <label>Price</label>
-                    <input class="input" type="number" placeholder="type here">
+                    <input id="price-input" class="input" type="number" placeholder="type here">
                     
                     <label>Currency</label>
-                    <input class="input" type="text" placeholder="type here">
+                    <input id="currency-input" class="input" type="text" placeholder="type here">
                     
                     <label>Image</label>
-                    <input type="file" placeholder="type here">
+                    <input id="image-input" class="input" type="text" placeholder="input url here">
                 </section>
                 <menu>
                     <!-- When clicking on button,  call the right function  -->
                     <button onclick="onCancel()">Cancel</button>
         
                     <!-- When clicking on button,  call the right function  -->
-                    <button onclick="onCreate()">Add</button>
+                    <button onclick="add()">Add</button>
                 </menu>
             </dialog>
-          </div>
+        </div>
+        <div id="product-add">
+            <!-- s
+            <img src="" alt="">
+            <p></p>
+            <div class="payment">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="update">
+                <img src="" alt="">
+                <img src="" alt="">
+            </div> -->
+        </div>
     </div>
 </body>
 <footer>
