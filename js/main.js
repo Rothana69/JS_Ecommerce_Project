@@ -1,9 +1,57 @@
 const container = document.querySelector(".container");
-let card_container = document.querySelector(".card-container");
 let productStorage = JSON.parse(localStorage.getItem("productLists"))
 
 
+
+
+
+// function searchAllProducts(){
+//     // event.preventDefault();
+//     createElement()
+//     let word = searchProduct.value;
+//     let cards = document.querySelectorAll(".card");
+//     cards.forEach(index => {
+//         let nameProduct = index.firstElementChild.nextElementSibling.firstElementChild.textContent
+//         let isFound = true;
+//         console.log(nameProduct)
+//         for (let charactor in word){
+//             if (word[charactor].toLocaleLowerCase()!== nameProduct[charactor].toLocaleLowerCase()){
+//                 isFound = false;
+//                 console.log(nameProduct[charactor])
+//             }
+//             if (!isFound){
+//                 index.style.display = 'none';
+//             }else {
+//                 index.style.display = "block";
+//             }
+//         }
+//     })
+// }
+
+
+
+function search() {
+
+    let searchProduct = document.querySelector("#search-bar").value;
+    let cards = document.querySelectorAll(".card");
+    for (let i = 0; i < cards.length; i++) {
+        let lastChild = cards[i].lastChild;
+        console.log(lastChild)
+        let name = lastChild.firstChild;
+        let title = name.textContent.toLocaleLowerCase();
+        if (title.indexOf(searchProduct)>-1){
+            cards[i].style.display = "";
+        }else{
+            cards[i].style.display = "none";
+        }
+    }
+}
+
+// let searchProduct = document.querySelector("#search-bar");
+// searchProduct.addEventListener("keyup",searchAllProducts);
+
 function createElement(){
+    let card_container = document.querySelector(".card-container");
     card_container.remove();
     card_container = document.createElement("div");
     card_container.className = "card-container";
@@ -56,6 +104,7 @@ function createElement(){
         card_body.appendChild(btn);
         card.appendChild(card_body);
     }
+
 }
 
 function dropDownUser() {
@@ -74,4 +123,9 @@ window.onclick = function(event) {
         }
     }
 }
+
+
+
+
+
 createElement();
