@@ -2,34 +2,6 @@ const container = document.querySelector(".container");
 let productStorage = JSON.parse(localStorage.getItem("productLists"))
 
 
-
-
-
-// function searchAllProducts(){
-//     // event.preventDefault();
-//     createElement()
-//     let word = searchProduct.value;
-//     let cards = document.querySelectorAll(".card");
-//     cards.forEach(index => {
-//         let nameProduct = index.firstElementChild.nextElementSibling.firstElementChild.textContent
-//         let isFound = true;
-//         console.log(nameProduct)
-//         for (let charactor in word){
-//             if (word[charactor].toLocaleLowerCase()!== nameProduct[charactor].toLocaleLowerCase()){
-//                 isFound = false;
-//                 console.log(nameProduct[charactor])
-//             }
-//             if (!isFound){
-//                 index.style.display = 'none';
-//             }else {
-//                 index.style.display = "block";
-//             }
-//         }
-//     })
-// }
-
-
-
 function search() {
 
     let searchProduct = document.querySelector("#search-bar").value;
@@ -47,8 +19,6 @@ function search() {
     }
 }
 
-// let searchProduct = document.querySelector("#search-bar");
-// searchProduct.addEventListener("keyup",searchAllProducts);
 
 function createElement(){
     let card_container = document.querySelector(".card-container");
@@ -123,9 +93,5 @@ window.onclick = function(event) {
         }
     }
 }
-
-
-
-
 
 createElement();
