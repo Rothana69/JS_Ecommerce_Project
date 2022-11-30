@@ -93,9 +93,15 @@ function readerData(){
         let image = document.createElement("img");
         image.className = "image";
         image.src = product_value.image;
-        card.appendChild(image);
-    
-    
+         
+        // card.appendChild(image);
+
+        let link = document.createElement("a");
+        link.className = "link";
+        link.href = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.smartprix.com%2Fmobiles%2Frealme-brand&psig=AOvVaw2jW5jk7u5X4-3VaJav6X23&ust=1669862059794000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKCF143v1PsCFQAAAAAdAAAAABAh";    
+        link.appendChild(image);
+        card.appendChild(link);
+
         let caredBody = document.createElement("div");
         caredBody.className = "card-body";
         card.appendChild(caredBody);
@@ -122,8 +128,8 @@ function readerData(){
         
         let editBtn = document.createElement("button");
         editBtn.className = "edit-btn";
-        editBtn.addEventListener("click", editProduct);
         editBtn.textContent = "Edit";
+        editBtn.addEventListener("click",editProduct)
         caredBody.appendChild(editBtn);
 
         let deleteBtn = document.createElement("button");
@@ -151,10 +157,33 @@ function add(){
 }
 let position;
 function editProduct(event) {
-    let index = event.target.parentElement.parentElement.dataset.index;
     showProductDialog(product);
     hideProductDialog(addBtn);
     showProductDialog(editBtn);
+    let index = event.target.parentElement.parentElement.dataset.index;
+    console.log(index)
+    document.querySelector("#name-product").value = productLists[index].card_title;
+    document.querySelector("#description-input").value = productLists[index].description;
+    document.querySelector("#price-input").value = productLists[index].price;
+    document.querySelector("#currency-input").value = productLists[index].currency;
+    document.querySelector("#image-input").value = productLists[index].image;
+    document.querySelector("#edit").addEventListener("click",function(){
+        changeData(index);
+        index = null;
+    });
+    
+}
+function changeData (index){
+    hideProductDialog(product)
+    let editProduct = {};
+    editProduct.card_title = document.querySelector("#name-product").value;
+    editProduct.description = document.querySelector("#description-input").value;
+    editProduct.price = document.querySelector("#price-input").value;
+    editProduct.currency = document.querySelector("#currency-input").value;
+    editProduct.image = document.querySelector("#image-input").value;
+    productLists[index] = editProduct;
+    saveData();
+    readerData();
 }
 
 

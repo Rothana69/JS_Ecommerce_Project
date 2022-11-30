@@ -1,66 +1,16 @@
-let card_container = document.querySelector(".card-container");
 const container = document.querySelector(".container");
-let card_product = [
-    {
-        card_title: "Iphone",
-        description: "New phone",
-        price: "1200",
-        currency: "$",
-        image: "http://127.0.0.1:5500/images/iphone.jpg"
-    },
-    {
-        card_title: "Iphone",
-        description: "New phone",
-        price: "1200",
-        currency: "$",
-        image: "http://127.0.0.1:5500/images/iphone.jpg"
-    },
-    {
-        card_title: "Iphone",
-        description: "New phone",
-        price: "1200",
-        currency: "$",
-        image: "http://127.0.0.1:5500/images/iphone.jpg"
-    },
-    {
-        card_title: "Iphone",
-        description: "New phone",
-        price: "1200",
-        currency: "$",
-        image: "http://127.0.0.1:5500/images/iphone.jpg"
-    },
-    {
-        card_title: "Iphone",
-        description: "New phone",
-        price: "1200",
-        currency: "$",
-        image: "http://127.0.0.1:5500/images/iphone.jpg"
-    }
-]
+let card_container = document.querySelector(".card-container");
+let productStorage = JSON.parse(localStorage.getItem("productLists"))
 
-
-
-function savedata() {
-    localStorage.setItem("card_product", JSON.stringify(card_product));
-    loadProduct()
-}
-
-function loadProduct() {
-    JSON.parse(localStorage.getItem("products"));
-    // if (productsStorage !== null) {
-    //   card_product = productsStorage;
-    // }
-    createElement();
-}
 
 function createElement(){
     card_container.remove();
     card_container = document.createElement("div");
     card_container.className = "card-container";
     container.appendChild(card_container);
-    for (let index of card_product) {
+    for (let index of productStorage) {
         let value = index;
-        
+
         let card = document.createElement("div");
         card.className = "card";
         card_container.appendChild(card);
@@ -124,5 +74,4 @@ window.onclick = function(event) {
         }
     }
 }
-savedata();
 createElement();
