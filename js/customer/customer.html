@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>NaniShop</title>
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <nav>
-            <div id="menu">
-                <img src="../../images/logo.png" alt="">
-                <ul>
-                    <li ><a style="border-bottom:3px solid rgb(0, 0, 141);" href="../../index.html">HOME</a></li>
-                    <li><a href="../product/product.html">PRODUCT</a></li>
-                </ul>
-            </div>
-            <div class="input-search">
-                <input id="search-bar" type="text" placeholder="Search here" onkeyup="search()">
-                <span id="search" class="fa fa-search"></span>
-            </div>
-            <div class="account-chart">
-                <div class="dropdown">
-                    <span class="fa fa-user-circle-o fa-2x dropbtn chart" onmouseover="dropDownUser()"></span>
-                    <div id="myDropdown" class="dropdown-content">
-                      <a href="customer.html">Customer</a>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaniShop</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav>
+        <div id="menu">
+            <img src="../../images/logo.png" alt="">
+            <ul>
+                <li ><a href="../../index.html">HOME</a></li>
+                <li><a href="../product/product.html">PRODUCT</a></li>
+            </ul>
+        </div>
+        <div class="input-search">
+            <input id="search-bar" type="text" placeholder="Search here" onkeyup="search()" >
+            <span id="search" class="fa fa-search"></span>
+        </div>
+        <div class="account-chart">
+            <div class="dropdown">
+                <span class="fa fa-user-circle-o fa-2x dropbtn chart" ></span>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="customer.html">Customer</a>
                 </div>
-                <span class="fa fa-bell-o fa-2x chart"></span>
-                <span class="fa fa-shopping-cart fa-2x chart"></span>
             </div>
-        </nav>
+            <span class="fa fa-bell-o fa-2x chart"></span>
+            <span class="fa fa-shopping-cart fa-2x chart"></span>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="headProduct">
+            <div class="title-customer">
+                <h2>New Product</h2>
+                <a href="../product/product.html">See all</a>
+            </div>
+            <div id="productContain">
+                <div class="result">
+                    <h2 >RESOURCE NOT FOUND</h2>
+                </div>
+            </div>
+        </div>
+        <div class="bodyProduct">
+            <h2>Product</h2>
+            <div id="productList">
+                <div class="result">
+                    <h2 >RESOURCE NOT FOUND</h2>
+                </div>
+            </div>
+        </div>
 
 
+    </div>
 
     <footer>
         <div><img id="footer-img" src="../../images/logo.png" alt=""></div>
@@ -53,4 +74,5 @@
         </ul>
     </footer>
 </body>
+<script src="js/customer.js"></script>
 </html>

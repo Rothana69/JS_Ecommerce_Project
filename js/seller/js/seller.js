@@ -2,53 +2,54 @@ const product = document.querySelector("#product-dialog");
 const container = document.querySelector(".product-contanter");
 const editBtn = document.querySelector("#edit");
 const addBtn = document.querySelector("#add");
-let titleDialog = document.querySelector("#dialogTitle");
+const titleDialog = document.querySelector("#dialogTitle");
 
 let productLists = [
     {
         card_title: "Iphone",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        price: "1200",
+        price: 1200,
         currency: "$",
         image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
     },
     {
         card_title: "Iphone",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        price: "1200",
+        price: 1200,
         currency: "$",
         image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
     },
     {
         card_title: "Iphone",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        price: "1200",
+        price: 1200,
         currency: "$",
         image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
     },
     {
         card_title: "Iphone",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        price: "1200",
+        price: 1200,
         currency: "$",
         image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
     },
     {
         card_title: "Iphone",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        price: "1200",
+        price: 1200,
         currency: "$",
         image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
     },
     
-]
+];
+
 function showProductDialog(element) {
     element.style.display = 'block';
-}
+};
 
 function hideProductDialog(element) {
     element.style.display = 'none';
-}
+};
 
 
 function saveData() {
@@ -95,14 +96,7 @@ function readerData(){
         let image = document.createElement("img");
         image.className = "image";
         image.src = product_value.image;
-         
         card.appendChild(image);
-
-        // let link = document.createElement("a");
-        // link.className = "link";
-        // link.href = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.smartprix.com%2Fmobiles%2Frealme-brand&psig=AOvVaw2jW5jk7u5X4-3VaJav6X23&ust=1669862059794000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCKCF143v1PsCFQAAAAAdAAAAABAh";    
-        // link.appendChild(image);
-        // card.appendChild(link);
 
         let caredBody = document.createElement("div");
         caredBody.className = "card-body";
@@ -144,14 +138,23 @@ function readerData(){
     container.appendChild(productAdd);
 }
 function add(){
-    hideProductDialog(product);
     let newProduct = {};
     newProduct.card_title = document.querySelector("#name-product").value;
     newProduct.description = document.querySelector("#description-input").value;
     newProduct.price = document.querySelector("#price-input").value;
     newProduct.currency = document.querySelector("#currency-input").value;
     newProduct.image = document.querySelector("#image-input").value;
-    if (newProduct.card_title !== ""&& newProduct.description !== ""&& newProduct.price !== ""&& newProduct.currency !== ""&& newProduct.image !== ""){
+    console.log(newProduct.image);
+    let completed = true;
+    for (let i in newProduct) {
+        if (newProduct[i] == "" || !isValidUrl(newProduct.image)){
+            completed = false;
+        };
+    }
+    if (!completed){
+        alert("You need to check again");
+    }else{
+        hideProductDialog(product);
         productLists.push(newProduct);
     }
     saveData();
@@ -164,7 +167,6 @@ function editProduct(event) {
     
     titleDialog.textContent = "UPDATE YOUR PRODUCT";
     let index = event.target.parentElement.parentElement.dataset.index;
-    console.log(index)
     document.querySelector("#name-product").value = productLists[index].card_title;
     document.querySelector("#description-input").value = productLists[index].description;
     document.querySelector("#price-input").value = productLists[index].price;
@@ -183,42 +185,51 @@ function changeData (index){
     editProduct.price = document.querySelector("#price-input").value;
     editProduct.currency = document.querySelector("#currency-input").value;
     editProduct.image = document.querySelector("#image-input").value;
-    productLists[index] = editProduct;
+    
+    let completed = true;
+    for (let i in editProduct) {
+        if (editProduct[i] == "" || !isValidUrl(editProduct.image)){
+            completed = false;
+        };
+    }
+    if (!completed){
+        alert("You need to check again");
+    }else{
+        hideProductDialog(product);
+        productLists[index] = editProduct;
+    }
     saveData();
     readerData();
 }
 
-
-function searchAllProducts(){
-    readerData();
-    // event.preventDefault();
-    let numOfTypes = 0;
-    let word = searchProduct.value;
+function search() {
+    let result = document.querySelector(".result");
+    let searchProduct = document.querySelector("#search-bar").value;
     let cards = document.querySelectorAll(".card");
-    cards.forEach(index => {
-        let nameProduct = index.firstElementChild.nextElementSibling.firstElementChild.textContent
-        let isFound = true;
-        console.log(nameProduct)
-        for (let charactor of word){
-            if (charactor.toLocaleLowerCase()!== nameProduct.toLocaleLowerCase()){
-                isFound = false;
-                console.log(nameProduct[charactor])
-            }
-            if (!isFound){
-                index.style.display = 'none';
-            }else {
-                numOfTypes++;
-                index.style.display = "block";
-            }
+    for (let i = 0; i < cards.length; i++) {
+        let lastChild = cards[i].lastChild;
+        let name = lastChild.firstChild;
+        let title = name.textContent.toLocaleLowerCase();
+        if (title.indexOf(searchProduct.toLocaleLowerCase())>-1){
+            cards[i].style.display = "";
+            result.style.display = "none";
+        }else{
+            cards[i].style.display = "none";
+            result.style.display = "block";
         }
-        // if (numOfTypes === 0){
-        //     document.querySelector(".card").style.display = "block";
-        // }
-       
-    })
+    }
 }
-let searchProduct = document.querySelector("#search-bar");
-searchProduct.addEventListener("keyup",searchAllProducts);
+
+
+
+function isValidUrl(string) {
+    try {
+      new URL(string);
+      return true;
+    } catch (err) {
+      return false;
+    }
+}
 
 
 // readerData or product
