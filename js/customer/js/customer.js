@@ -1,8 +1,10 @@
+// GLOBAL=====================================================
+let productStorage = JSON.parse(localStorage.getItem("productLists"))
 let newProduct = document.querySelector(".headProduct");
 let productContain = document.querySelector("#productContain");
 let bodyProduct = document.querySelector(".bodyProduct");
 let productList = document.querySelector("#productList");
-let productStorage = JSON.parse(localStorage.getItem("productLists"))
+let container = document.querySelector(".container");
 
 
 
@@ -71,8 +73,15 @@ function search() {
     }
 }
 
+function detailProduct(){
+    let detailProducts = document.createElement("div");
+    detailProducts.id = "detail-show";
+    let image = document.createElement("img");
+    image.src = productLists.image;
+
+};
+
 function customerProduct(items,cont,ID,container){
-    
     cont.remove();
     let customerCard = document.createElement("div");
     customerCard.id = ID;
@@ -84,7 +93,6 @@ function customerProduct(items,cont,ID,container){
         card.className = "card";
         card.dataset.index = i;
         customerCard.appendChild(card);
-        // console.log(card);
 
         let image = document.createElement("img");
         image.className = "image";

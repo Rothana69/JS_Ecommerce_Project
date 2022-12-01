@@ -261,7 +261,7 @@ input:focus {
 
 
 .result{
-    height: 300px;
+    height: 200px;
     text-align: center;
     padding-top: 150px;
     display: none;
@@ -296,7 +296,7 @@ input:focus {
 }
 #productContain{
     display: grid;
-    gap: 20px;
+    gap: 10px;
     grid-template-columns: repeat(5,1fr);
 }
 .bodyProduct{
@@ -305,6 +305,7 @@ input:focus {
 }
 #productList{
     display: grid;
+    gap: 10px;
     grid-template-columns: repeat(5,1fr);
 
 

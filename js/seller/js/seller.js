@@ -211,19 +211,17 @@ function changeData (index){
 }
 
 function search() {
-    let result = document.querySelector(".result");
     let searchProduct = document.querySelector("#search-bar").value;
     let cards = document.querySelectorAll(".card");
     for (let i = 0; i < cards.length; i++) {
         let lastChild = cards[i].lastChild;
         let name = lastChild.firstChild;
         let title = name.textContent.toLocaleLowerCase();
-        if (title.indexOf(searchProduct.toLocaleLowerCase())>-1){
+        if (title.indexOf(searchProduct())>-1){
             cards[i].style.display = "";
-            result.style.display = "none";
         }else{
+
             cards[i].style.display = "none";
-            result.style.display = "block";
         }
     }
 }
