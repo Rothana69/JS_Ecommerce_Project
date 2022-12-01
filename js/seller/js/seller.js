@@ -137,6 +137,9 @@ function readerData(){
     }
     container.appendChild(productAdd);
 }
+
+
+
 function add(){
     let newProduct = {};
     newProduct.card_title = document.querySelector("#name-product").value;
@@ -151,8 +154,13 @@ function add(){
             completed = false;
         };
     }
-    if (!completed){
-        alert("You need to check again");
+    if (!completed || check()){
+        if (check()){
+            alert("Name already taken!");
+
+        }else{
+            alert("You need to check again");
+        }
     }else{
         hideProductDialog(product);
         productLists.push(newProduct);
@@ -221,6 +229,18 @@ function search() {
 }
 
 
+function check() {
+    let name = document.querySelector("#name-product").value;
+    let same = false
+    for (let i in productLists) {
+        if (name === productLists[i].card_title) {
+            same = true;
+        }
+    } 
+    return same;
+}
+
+check();
 
 function isValidUrl(string) {
     try {

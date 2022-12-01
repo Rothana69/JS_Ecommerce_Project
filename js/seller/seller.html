@@ -51,9 +51,15 @@
                     <label>Price</label>
                     <input id="price-input" class="input" type="number" placeholder="type here">
                     
-                    <label>Currency</label>
-                    <input id="currency-input" class="input" type="text" placeholder="type here">
-                    
+                    <label for="currency">Currency</label>
+                    <!-- <input id="currency-input" class="input" type="text" placeholder="type here"> -->
+                    <select name="currency" class="input" id="currency-input">
+                        <option value="$">$</option>
+                        <option value="៛">៛</option>
+                        <option value=" €"> €</option>
+                        <option value=" £"> £</option>
+                    </select>
+
                     <label>Image</label>
                     <input id="image-input" class="input" type="text" placeholder="input url here">
                 </section>

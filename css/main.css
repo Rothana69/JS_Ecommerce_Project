@@ -157,9 +157,16 @@ a{
     gap: 10px;
 }
 .detail{
-    display: flex;
-    justify-self: flex-end;
-    justify-content: center;
+    border-radius: 0 0 15px 0 ;
+}
+.btn-Buy{
+    border-radius: 0 0 0 15px ;
+}
+.detail{
+    width: 80px;
+}
+#edit, #add{
+    width: 70px;
 }
 button{
     padding: 10px;

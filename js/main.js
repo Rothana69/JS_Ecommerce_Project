@@ -40,18 +40,18 @@ function createElement(){
         card.appendChild(image);
     
     
-        let card_body = document.createElement("div");
-        card_body.className = "card-body";
+        let cardBody = document.createElement("div");
+        cardBody.className = "card-body";
     
         let text = document.createElement("h3");
         text.className = "card-title";
         text.textContent = value.card_title
-        card_body.appendChild(text);
+        cardBody.appendChild(text);
     
         let price = document.createElement("p");
         price.className = "price";
         price.textContent = value.price;
-        card_body.appendChild(price);
+        cardBody.appendChild(price);
     
         let currency = document.createElement("span");
         currency.className = "currency";
@@ -66,14 +66,23 @@ function createElement(){
             star.className = "fa fa-star";
             star_rate.appendChild(star);
         }
-        card_body.appendChild(star_rate);
+        cardBody.appendChild(star_rate);
         
-    
+        let btnContainer = document.createElement("div");
+        btnContainer.className = "btn-container";
+        cardBody.appendChild(btnContainer);
+
+        let btnBuy = document.createElement("button");
+        btnBuy.className = "btn-Buy";
+        btnBuy.textContent = "Buy Now";
+        btnContainer.appendChild(btnBuy);
+
+
         let btn = document.createElement("button");
         btn.className = "detail";
         btn.textContent = "Detail";
-        card_body.appendChild(btn);
-        card.appendChild(card_body);
+        btnContainer.appendChild(btn);
+        card.appendChild(cardBody);
     }
 
 }
