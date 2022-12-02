@@ -7,6 +7,7 @@
 body{
     height: 100vh;
 
+
 }
 nav{
     display: flex;
@@ -375,4 +376,32 @@ input:focus {
 #buy-now{
     flex: 1;
     border-radius: 0 0 15px 0;
+}
+
+
+/* CART */
+#Cart-container{
+    background: rgb(221, 221, 221);
+    display: flex;
+    padding: 3%;
+    gap: 3%;
+}
+.cart-shopping{
+    background: rgb(255, 255, 255);
+    padding: 2%;
+    flex: 3;
+}
+table{
+    /* background: rgb(244, 113, 113); */
+    width: 100%;
+}
+th{
+    /* background: rgb(14, 232, 65); */
+    border-bottom: 4px solid rgb(0, 0, 118);
+    padding: 2%;
+}
+.order-summay{
+    background: rgb(255, 255, 255);
+    padding: 2%;
+    flex: 1;
 }

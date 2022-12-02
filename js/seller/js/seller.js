@@ -217,7 +217,7 @@ function search() {
         let lastChild = cards[i].lastChild;
         let name = lastChild.firstChild;
         let title = name.textContent.toLocaleLowerCase();
-        if (title.indexOf(searchProduct())>-1){
+        if (title.indexOf(searchProduct.toLocaleLowerCase())>-1){
             cards[i].style.display = "";
         }else{
 
