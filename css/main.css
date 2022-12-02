@@ -98,12 +98,6 @@ a{
     display: flex;
     justify-content: space-between;
 }
-#discount{
-    height: 40vh;
-    background-image: url("../images/discounr.png");
-    background-position-y: -50px;
-    background-size: cover;
-}
 .container{
     padding: 40px 20px;
     background: rgb(202, 202, 202);
@@ -134,7 +128,7 @@ a{
     color: #691FF0;
 
 }
-.price{
+.price,#product-price{
     color: red;
 }
 .detail, li ,.delete,.editbtn ,button{
@@ -294,7 +288,7 @@ input:focus {
     display: flex;
     justify-content: space-between;
 }
-#productContain{
+.productContain{
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(5,1fr);
@@ -303,7 +297,7 @@ input:focus {
     display: grid;
     gap: 20px;
 }
-#productList{
+.productList{
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(5,1fr);
@@ -322,5 +316,63 @@ input:focus {
 
 }
 .more-detial{
+    border-radius: 0 0 15px 0;
+}
+
+
+#detail{
+    background: rgb(199, 199, 199);
+    padding:3%;
+    text-align: cent;
+    display: none;
+
+}
+.infor{
+    background: rgb(255, 255, 255);
+    margin: auto;
+    display: flex;
+    border-radius: 15px;
+    width: 70%;
+}
+
+.img-contain{
+    padding: 20px;
+}
+#image-detail{
+    height: 400px;
+    width: 450px;
+    border-radius: 15px;
+    display: flex;
+}
+.text-btn{
+    padding: 3%;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+.product-title{
+
+    display: grid;
+    height: 100%;
+    gap: 20px;
+}
+#product-name{
+    font-size: 30px;
+    font-weight: bold;
+}
+.btn{
+    display: flex;
+    flex: 0.2;
+    gap: 8px;
+    justify-content: space-evenly;
+}
+#add-cart{
+    flex: 1;
+    border-radius: 0 0 0 15px;
+}
+#buy-now{
+    flex: 1;
     border-radius: 0 0 15px 0;
 }

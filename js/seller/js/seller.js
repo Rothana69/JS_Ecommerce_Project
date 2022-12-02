@@ -238,8 +238,8 @@ function check() {
     return same;
 }
 
-check();
-
+// check();
+//  URL validate from wwww.freecodecamp.com
 function isValidUrl(string) {
     try {
       new URL(string);

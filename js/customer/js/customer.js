@@ -1,10 +1,19 @@
 // GLOBAL=====================================================
 let productStorage = JSON.parse(localStorage.getItem("productLists"))
 let newProduct = document.querySelector(".headProduct");
-let productContain = document.querySelector("#productContain");
+let productContain = document.querySelector(".productContain");
 let bodyProduct = document.querySelector(".bodyProduct");
-let productList = document.querySelector("#productList");
+let productList = document.querySelector(".productList");
 let container = document.querySelector(".container");
+
+
+let detail = document.querySelector("#detail");
+let productTitle = document.querySelector(".product-title");
+let imageDetail = document.querySelector("#image-detail");
+let productName = document.querySelector("#product-name");
+let productDes = document.querySelector("#product-des");
+let productPrice = document.querySelector("#product-price");
+let prodIndex = 0;
 
 
 
@@ -69,18 +78,38 @@ function search() {
     }
 }
 
-// function detailProduct(){
-//     let detailProducts = document.createElement("div");
-//     detailProducts.id = "detail-show";
-//     let image = document.createElement("img");
-//     image.src = productLists.image;
+// =============================================================
+// detail
+let starRating = document.createElement("div");
+starRating.className = "star-rating";
+    for (let item = 0; item < 5; item++) {
+        let star = document.createElement("span");
+        star.className = "fa fa-star";
+        starRating.appendChild(star);
+        
+    }
+productTitle.appendChild(starRating);
+function detailProduct(prod,indexProd){
+    // prodIndex = prod;
+    imageDetail.src = prod[indexProd].image;
+    imageDetail.addEventListener("click",hideDetail);
+    productName.textContent = prod[indexProd].card_title;
+    productDes.textContent = prod[indexProd].description ;
+    productPrice.textContent = prod[indexProd].price + prod[indexProd].currency;
+    container.style.display = "none";
+    detail.style.display = "block";
+};
+function hideDetail(){
+    detail.style.display = "none";
+    container.style.display = "block";
+}
+// ==================================================================
 
-// };
 
 function customerProduct(items,cont,ID,container){
     cont.remove();
     let customerCard = document.createElement("div");
-    customerCard.id = ID;
+    customerCard.className = ID;
     container.appendChild(customerCard)
     for (let i = 0; i <items.length; i++) {
         let product_value = items[i];
@@ -89,10 +118,12 @@ function customerProduct(items,cont,ID,container){
         card.className = "card";
         card.dataset.index = i;
         customerCard.appendChild(card);
+        // console.log(card)
 
         let image = document.createElement("img");
         image.className = "image";
         image.src = product_value.image;
+
         card.appendChild(image);
 
         let cardBody = document.createElement("div");
@@ -112,7 +143,9 @@ function customerProduct(items,cont,ID,container){
         currency.className = "currency";
         currency.textContent = product_value.currency;
         price.appendChild(currency);
+
         let starRating = document.createElement("div");
+        starRating.className = "star-rating";
         for (let item = 0; item < 5; item++) {
             let star = document.createElement("span");
             star.className = "fa fa-star";
@@ -131,8 +164,13 @@ function customerProduct(items,cont,ID,container){
 
         let moreDetial = document.createElement("button");
         moreDetial.className = "more-detial";
-
         moreDetial.textContent = "More Detial";
+        
+
+        moreDetial.addEventListener("click",function(event) {
+            let index = event.target.parentElement.parentElement.parentElement.dataset.index;
+            detailProduct(items,index);
+        })
         btnContainer.appendChild(moreDetial);
     };
 };

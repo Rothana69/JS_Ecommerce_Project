@@ -1,6 +1,12 @@
 const container = document.querySelector(".container");
+const discount = document.querySelector("#discount");
 let productStorage = JSON.parse(localStorage.getItem("productLists"))
-
+let detail = document.querySelector("#detail");
+let productTitle = document.querySelector(".product-title");
+let imageDetail = document.querySelector("#image-detail");
+let productName = document.querySelector("#product-name");
+let productDes = document.querySelector("#product-des");
+let productPrice = document.querySelector("#product-price");
 
 function search() {
 
@@ -18,6 +24,31 @@ function search() {
     }
 }
 
+let starRating = document.createElement("div");
+starRating.className = "star-rating";
+    for (let item = 0; item < 5; item++) {
+        let star = document.createElement("span");
+        star.className = "fa fa-star";
+        starRating.appendChild(star);
+        
+    }
+productTitle.appendChild(starRating);
+function detailProduct(index){
+    // prodIndex = prod;
+    imageDetail.src = productStorage[index].image;
+    productName.textContent = productStorage[index].card_title;
+    productDes.textContent = productStorage[index].description ;
+    productPrice.textContent = productStorage[index].price + productStorage[index].currency;
+    detail.style.display = "block";
+    container.style.display = "none";
+    discount.style.display = "none";
+};
+function hideDetail(event){
+    detail.style.display = "none";
+    discount.style.display = "block";
+    container.style.display = "block";
+}
+detail.addEventListener("click", hideDetail);
 
 function createElement(){
     let card_container = document.querySelector(".card-container");
@@ -25,12 +56,14 @@ function createElement(){
     card_container = document.createElement("div");
     card_container.className = "card-container";
     container.appendChild(card_container);
-    for (let index of productStorage) {
-        let value = index;
+    for (let index in productStorage) {
+        let value = productStorage[index];
 
         let card = document.createElement("div");
         card.className = "card";
+        card.dataset.index = index;
         card_container.appendChild(card);
+        console.log(card);
     
         let image = document.createElement("img");
         image.className = "image";
@@ -79,6 +112,10 @@ function createElement(){
         let btn = document.createElement("button");
         btn.className = "detail";
         btn.textContent = "Detail";
+        btn.addEventListener("click",function(event) {
+            let index = event.target.parentElement.parentElement.parentElement.dataset.index;
+            detailProduct(index);
+        })
         btnContainer.appendChild(btn);
         card.appendChild(cardBody);
     }
