@@ -3,7 +3,7 @@ let productStorage = JSON.parse(localStorage.getItem("productLists"))
 
 
 function search() {
-    let result = document.querySelector(".result");
+
     let searchProduct = document.querySelector("#search-bar").value;
     let cards = document.querySelectorAll(".card");
     for (let i = 0; i < cards.length; i++) {
@@ -11,11 +11,9 @@ function search() {
         let name = lastChild.firstChild;
         let title = name.textContent.toLocaleLowerCase();
         if (title.indexOf(searchProduct.toLocaleLowerCase())>-1){
-            cards[i].style.display = "";
-            result.style.display = "none";
+            cards[i].style.display = "block";
         }else{
             cards[i].style.display = "none";
-            result.style.display = "block";
         }
     }
 }

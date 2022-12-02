@@ -52,8 +52,6 @@ let productLists = [
     
 ]
 function search() {
-    let result = document.querySelector(".result");
-    
     let searchProduct = document.querySelector("#search-bar").value;
     let cards = document.querySelectorAll(".card");
     console.log(cards)
@@ -63,23 +61,21 @@ function search() {
         let title = name.textContent.toLocaleLowerCase();
         if (title.indexOf(searchProduct.toLocaleLowerCase())>-1){
             cards[i].style.display = "";
-    
 
         }else{
             cards[i].style.display = "none";
-            
         }
         
     }
 }
 
-function detailProduct(){
-    let detailProducts = document.createElement("div");
-    detailProducts.id = "detail-show";
-    let image = document.createElement("img");
-    image.src = productLists.image;
+// function detailProduct(){
+//     let detailProducts = document.createElement("div");
+//     detailProducts.id = "detail-show";
+//     let image = document.createElement("img");
+//     image.src = productLists.image;
 
-};
+// };
 
 function customerProduct(items,cont,ID,container){
     cont.remove();
