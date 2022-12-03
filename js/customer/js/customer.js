@@ -8,12 +8,12 @@ let container = document.querySelector(".container");
 
 
 let detail = document.querySelector("#detail");
-let productTitle = document.querySelector(".product-title");
-let imageDetail = document.querySelector("#image-detail");
-let productName = document.querySelector("#product-name");
-let productDes = document.querySelector("#product-des");
-let productPrice = document.querySelector("#product-price");
-let prodIndex = 0;
+let productTitle = document.querySelector(".productTitle");
+let imageDetail = document.querySelector("#imageDetail");
+let productName = document.querySelector("#productName");
+let productDes = document.querySelector("#productDes");
+let productPrice = document.querySelector("#productPrice");
+let cartContainer = document.querySelector("#CartContainer");
 
 
 
@@ -24,35 +24,35 @@ let prodIndex = 0;
 // old product==========================================================================
 let productLists = [
     {
-        card_title: "Ipad",
+        cardTitle: "Ipad",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
         price: 1200,
         currency: "$",
         image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
     },
     {
-        card_title: "JaVis",
+        cardTitle: "JaVis",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
         price: 1200,
         currency: "$",
         image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
     },
     {
-        card_title: "Iphone",
+        cardTitle: "Iphone",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
         price: 1200,
         currency: "$",
         image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
     },
     {
-        card_title: "Iphone",
+        cardTitle: "Iphone",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
         price: 1200,
         currency: "$",
         image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
     },
     {
-        card_title: "Iphone",
+        cardTitle: "Iphone",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
         price: 1200,
         currency: "$",
@@ -61,7 +61,7 @@ let productLists = [
     
 ]
 function search() {
-    let searchProduct = document.querySelector("#search-bar").value;
+    let searchProduct = document.querySelector("#searchBar").value;
     let cards = document.querySelectorAll(".card");
     console.log(cards)
     for (let i = 0; i < cards.length; i++) {
@@ -81,19 +81,18 @@ function search() {
 // =============================================================
 // detail
 let starRating = document.createElement("div");
-starRating.className = "star-rating";
-    for (let item = 0; item < 5; item++) {
-        let star = document.createElement("span");
-        star.className = "fa fa-star";
-        starRating.appendChild(star);
-        
-    }
+starRating.className = "starRating";
+for (let item = 0; item < 5; item++) {
+    let star = document.createElement("span");
+    star.className = "fa fa-star";
+    starRating.appendChild(star);
+}
 productTitle.appendChild(starRating);
 function detailProduct(prod,indexProd){
     // prodIndex = prod;
     imageDetail.src = prod[indexProd].image;
     imageDetail.addEventListener("click",hideDetail);
-    productName.textContent = prod[indexProd].card_title;
+    productName.textContent = prod[indexProd].cardTitle;
     productDes.textContent = prod[indexProd].description ;
     productPrice.textContent = prod[indexProd].price + prod[indexProd].currency;
     container.style.display = "none";
@@ -111,7 +110,7 @@ function customerProduct(items,cont,ID,container){
     let customerCard = document.createElement("div");
     customerCard.className = ID;
     container.appendChild(customerCard)
-    for (let i = 0; i <items.length; i++) {
+    for (let i = 0; i <items.length; i++){
         let product_value = items[i];
         
         let card = document.createElement("div");
@@ -127,12 +126,12 @@ function customerProduct(items,cont,ID,container){
         card.appendChild(image);
 
         let cardBody = document.createElement("div");
-        cardBody.className = "card-body";
+        cardBody.className = "cardBody";
         card.appendChild(cardBody);
     
         let text = document.createElement("h3");
-        text.className = "card-title";
-        text.textContent = product_value.card_title
+        text.className = "cardTitle";
+        text.textContent = product_value.cardTitle
         cardBody.appendChild(text);
         let price = document.createElement("p");
         price.className = "price";
@@ -145,7 +144,7 @@ function customerProduct(items,cont,ID,container){
         price.appendChild(currency);
 
         let starRating = document.createElement("div");
-        starRating.className = "star-rating";
+        starRating.className = "starRating";
         for (let item = 0; item < 5; item++) {
             let star = document.createElement("span");
             star.className = "fa fa-star";
@@ -154,27 +153,147 @@ function customerProduct(items,cont,ID,container){
         cardBody.appendChild(starRating);
 
         let btnContainer = document.createElement("div");
-        btnContainer.className = "btn-container";
+        btnContainer.className = "btnContainer";
         cardBody.appendChild(btnContainer);
         
         let addToCart = document.createElement("button");
-        addToCart.className = "add-to-cart-btn";
+        addToCart.className = "addToCartBtn";
         addToCart.textContent = "Add to Cart";
+        addToCart.addEventListener("click",addToShopping);
+            
         btnContainer.appendChild(addToCart);
 
         let moreDetial = document.createElement("button");
-        moreDetial.className = "more-detial";
+        moreDetial.className = "moreDetial";
         moreDetial.textContent = "More Detial";
         
 
         moreDetial.addEventListener("click",function(event) {
-            let index = event.target.parentElement.parentElement.parentElement.dataset.index;
-            detailProduct(items,index);
+            let i = event.target.parentElement.parentElement.parentElement.dataset.index;
+            detailProduct(items,i);
         })
         btnContainer.appendChild(moreDetial);
     };
 };
+let cart = [];
+function saveData() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+function loadCartLists() {
+    let cartStorage = JSON.parse(localStorage.getItem("cart"));
+    if (cart !== null) {
+        cart = cartStorage;
+    }
+}
+
+
+function addToShopping(event){
+    let newproductList = {};
+    let index = event.target.parentElement.parentElement.parentElement.dataset.index;
+    newproductList.cardTitle = productStorage[index].cardTitle;
+    newproductList.description = productStorage[index].description;
+    newproductList.price = productStorage[index].price;
+    newproductList.currency = productStorage[index].currency;
+    newproductList.image = productStorage[index].image;
+    cart.push(newproductList);
+    console.log(index)
+    saveData();
+    addToShoppingCart();
+    // loadCartLists();
+    
+};
+// saveData()
+// loadCartLists();
+// addToShoppingCart()
+function addToShoppingCart(){
+    // loadCartLists();
+    let tdContainer = document.querySelector("tbody");
+    for (let index = 0; index <cart.length;index++){
+        let infor = cart[index];
+
+        let trOne = document.createElement("tr");
+        trOne.dataset.index = index;
+
+        let tdOne = document.createElement("td");
+
+        let imageContent = document.createElement("div");
+        imageContent.className = "imageContent";
+
+        let imageCart = document.createElement("img");
+        imageCart.className = "imageCart";
+        imageCart.src = infor.image;
+
+        let content = document.createElement("div");
+        content.className = "content";
+        let nameCart = document.createElement("h3");
+        nameCart.textContent = infor.cardTitle;
+        let desCart = document.createElement("span");
+        desCart.textContent = infor.description;
+        let starRating = document.createElement("div");
+        starRating.className = "starRating";
+        for (let item = 0; item < 5; item++) {
+            let star = document.createElement("span");
+            star.className = "fa fa-star";
+            starRating.appendChild(star);
+        }
+
+        imageContent.appendChild(imageCart);
+        content.appendChild(nameCart);
+        content.appendChild(desCart);
+        content.appendChild(starRating);
+        imageContent.appendChild(content);
+        tdOne.appendChild(imageContent);
+
+        let tdtwo = document.createElement("td");
+        let quantity = document.createElement("input");
+        quantity.type = "number";
+        quantity.className = "quantity";
+        tdtwo.appendChild(quantity);
+
+        let price = document.createElement("td");
+        price.textContent = infor.price + infor.currency;
+
+        let totalPrice = document.createElement("td");
+        totalPrice.textContent = (quantity.value * Number.price) + infor.currency;
+        let trash = document.createElement("td");
+        trash.style.width = "10%";
+        let trashIcon = document.createElement("span");
+        trashIcon.className = "fa fa-trash trash";
+        trashIcon.style.fontSize = "30px";
+        trashIcon.style.color = "RED";
+        trashIcon.addEventListener("click", deleteCart);
+        trash.appendChild(trashIcon)
+
+        trOne.appendChild(tdOne);
+        trOne.appendChild(tdtwo);
+        trOne.appendChild(price);
+        trOne.appendChild(totalPrice);
+        trOne.appendChild(trash);
+        tdContainer.appendChild(trOne);
+    }
+    // saveData();
+    // location.reload()
+    
+};
+
+function deleteCart(event){
+    let index = event.target.parentElement.parentElement.dataset.index;
+    cart.splice(index,1);
+    saveData();
+    addToShoppingCart();  
+}
+function hideCart(){
+    cartContainer.style.display = "none";
+    container.style.display = "block";
+}
+
+function showCart(){
+    cartContainer.style.display = "block";
+    container.style.display = "none";
+
+}
 
 customerProduct(productStorage,productContain,"productContain",newProduct);
 customerProduct(productLists,productList,"productList",bodyProduct);
 customerProduct(productStorage,productList,"productList",bodyProduct);
+loadCartLists()

@@ -14,28 +14,27 @@
             <img src="../../images/logo.png" alt="">
             <ul>
                 <li ><a href="../../index.html">HOME</a></li>
-                <li><a href="../product/product.html">PRODUCT</a></li>
             </ul>
         </div>
-        <div class="input-search">
-            <input id="search-bar" type="text" placeholder="Search here" onkeyup="search()" >
+        <div class="inputSearch">
+            <input id="searchBar" type="text" placeholder="Search here" onkeyup="search()" >
             <span id="search" class="fa fa-search"></span>
         </div>
-        <div class="account-chart">
-            <div class="dropdown">
+        <div class="accountChart">
+            <div class="dropDown">
                 <span class="fa fa-user-circle-o fa-2x dropbtn chart" ></span>
-                <div id="myDropdown" class="dropdown-content">
+                <div id="myDropdown" class="dropdownContent">
                     <a href="customer.html">Customer</a>
                 </div>
             </div>
             <span class="fa fa-bell-o fa-2x chart"></span>
-            <span class="fa fa-shopping-cart fa-2x chart"></span>
+            <span class="fa fa-shopping-cart fa-2x chart" onclick="showCart()"></span>
         </div>
     </nav>
     
-    <div class="container" style="display: none;">
+    <div class="container" >
         <div class="headProduct">
-            <div class="title-customer">
+            <div class="titleCustomer">
                 <h2>New Product</h2>
                 <a href="../product/product.html">See all</a>
             </div>
@@ -43,78 +42,68 @@
             </div>
         </div>
         <div class="bodyProduct">
-            <h2>Product</h2>
+            <h2>All Products</h2>
             <div class="productList">
             </div>
         </div>
     </div>
 
 
-    <!-- detail product -->
     <div id="detail">
         <div class="infor">
-            <div class="img-contain">
-                <img id="image-detail" src="" alt="">
+            <div class="imgContain">
+                <img id="imageDetail" src="" alt="">
             </div>
-            <div class="text-btn">
-                <div class="product-title">
+            <div class="textBtn">
+                <div class="productTitle">
                     <h2>PRODUCT DETAIL</h2>
-                    <P><b>Name : </b> <span id="product-name"></span></P>
-                    <p><b>Description : </b> <span id="product-des"></span></p>
-                    <p><b>Cost : </b> <span id="product-price"></span></p>
+                    <P><b>Name : </b> <span id="productName"></span></P>
+                    <p><b>Description : </b> <span id="productDes"></span></p>
+                    <p><b>Cost : </b> <span id="productPrice"></span></p>
                 </div>
                 <div class="btn">
-                    <button id="add-cart">Add to Cart</button>
-                    <button id="buy-now">Buy Now</button>
+                    <button id="addCart" onclick="addToShopping()">Add to Cart</button>
+                    <button id="buyNow">Buy Now</button>
                 </div>
             </div>
         </div>
     </div>
-<!--------------------------------------------------------------------------------------------->
-<!-- Cart show product -->
 
-    <div id="Cart-container">
-        <div class="cart-shopping">
-            <div class="cart-title">
-                <h3>Shopping Cart</h3>
+    <div id="CartContainer" style="display: none;">
+        <div class="cartShopping">
+            <div class="cartTitle">
+                <h2><strong>SHOPPING CART</strong></h2>
             </div>
             <table>
                 <thead>
                     <tr>
-                        <th>PRODUCT DETAILS</th>
-                        <th>QUANTITY</th>
-                        <th>PRICE</th>
-                        <th>TOTAL</th>
+                        <th style="width:40%;">PRODUCT DETAILS</th>
+                        <th style="width:10%;">QUANTITY</th>
+                        <th style="width:10%;">PRICE</th>
+                        <th style="width:10%;">TOTAL</th>
+                        <!-- <th style="width:10%;"></th> -->
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <img src="" alt="">
-                            <div>
-                                <p></p>
-                                <p></p>
-                                <p></p>
-                            </div>
-                        </td>
-                        <td><input type="number"></td>
-                        <td><span>sdf</span></td>
-                        <td><span>ds</span></td>
-                    </tr>
+                <tbody class="tboy">
                 </tbody>
             </table>
         </div>
-        <div class="order-summay">
-            <h3>ORDER SUMMARY</h3>
-            <div class="count-items">
-                <P>ITEM<span></span></P>
-                <p></p>
+        <div class="orderSummay">
+            <div class="cartTitle">
+                <h2><strong>ORDER SUMMARY</strong></h2>
             </div>
-            <div class="total-price">
+            <div class="countItems">
+                <P>ITEM<span></span></P>
+                <p>df</p>
+            </div>
+            <div class="totalPrice">
                 <h4>TOTAL COST</h4>
                 <h4></h4>
             </div>
-            <button>CHECKOUT</button>
+            <div class="btnPurchase">
+                <button id="purchaseMore" onclick="hideCart()">PURCHASE MORE</button>
+                <button id="checkOut">CHECKOUT</button>
+            </div>
         </div>
     </div>
     <footer>

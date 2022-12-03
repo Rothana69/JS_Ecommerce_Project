@@ -14,17 +14,16 @@
             <img src="../../images/logo.png" alt="">
             <ul>
                 <li><a href="../../index.html">HOME</a></li>
-                <li><a href="../product/product.html">PRODUCT</a></li>
             </ul>
         </div>
-        <div class="input-search">
-            <input id="search-bar" type="text" placeholder="Search here" onkeyup="search()">
+        <div class="inputSearch">
+            <input id="searchBar" type="text" placeholder="Search here" onkeyup="search()">
             <span id="search" class="fa fa-search"></span>
         </div>
-        <div class="account-chart">
-            <div class="dropdown">
+        <div class="accountChart">
+            <div class="dropDown">
                 <span class="fa fa-user-circle-o fa-2x dropbtn chart"></span>
-                <div id="myDropdown" class="dropdown-content">
+                <div id="myDropdown" class="dropdownContent">
                   <a href="../costomer/costomer.html">Costomer</a>
                   <a href="../seller/seller.html">Seller</a>
                 </div>
@@ -33,27 +32,29 @@
             <span class="fa fa-shopping-cart fa-2x chart"></span>
         </div>
     </nav>
-    <div class="product-contanter">
-        <h2>Products List</h2>
-        <button id="add-product" onclick="onAdd()">
-            <h4>Add Product</h4>
-        </button>
-        <div id="product-dialog">
+    <div class="productContanter">
+        <div class="sellerProduct">
+            <h2>Products List</h2>
+            <button id="addProduct" onclick="onAdd()">
+                <h4>Add Product</h4>
+            </button>
+        </div>
+        <div id="productDialog">
             <dialog open>
                 <header id="dialogTitle">ADD NEW PRODUCT</header>
                 <section>
                     <label>Name of product</label>
-                    <input id="name-product" class="input" type="text" placeholder="type here" />
+                    <input id="nameProduct" class="input" type="text" placeholder="type here" />
                     
                     <label>Description</label>
-                    <input id="description-input" class="input" type="text" placeholder="type here">
+                    <input id="descriptionInput" class="input" type="text" placeholder="type here">
 
                     <label>Price</label>
-                    <input id="price-input" class="input" type="number" placeholder="type here" min="0">
+                    <input id="priceInput" class="input" type="number" placeholder="type here" min="0">
                     
                     <label for="currency">Currency</label>
                     <!-- <input id="currency-input" class="input" type="text" placeholder="type here"> -->
-                    <select class="input" id="currency-input">
+                    <select class="input" id="currencyInput">
                         <option value="$">$</option>
                         <option value="៛">៛</option>
                         <option value="€">€</option>
@@ -61,7 +62,7 @@
                     </select>
 
                     <label>Image</label>
-                    <input id="image-input" class="input" type="text" placeholder="input url here">
+                    <input id="imageInput" class="input" type="text" placeholder="input url here">
                 </section>
                 <menu>
                     <!-- When clicking on button,  call the right function  -->
@@ -73,7 +74,7 @@
                 </menu>
             </dialog>
         </div>
-        <div id="product-add">
+        <div id="productAdd">
         </div>
     </div>
 </body>
@@ -81,7 +82,6 @@
     <div><img id="footer-img" src="../../images/logo.png" alt=""></div>
     <ul class="list">
         <li><a href="../../index.html">Home</a></li>
-        <li><a href="../product/product.html">Product</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Terms</a></li>
         <li><a href="#">Privacy Policy</a></li>

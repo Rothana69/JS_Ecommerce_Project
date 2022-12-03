@@ -2,15 +2,15 @@ const container = document.querySelector(".container");
 const discount = document.querySelector("#discount");
 let productStorage = JSON.parse(localStorage.getItem("productLists"))
 let detail = document.querySelector("#detail");
-let productTitle = document.querySelector(".product-title");
-let imageDetail = document.querySelector("#image-detail");
-let productName = document.querySelector("#product-name");
-let productDes = document.querySelector("#product-des");
-let productPrice = document.querySelector("#product-price");
+let productTitle = document.querySelector(".productTitle");
+let imageDetail = document.querySelector("#imageDetail");
+let productName = document.querySelector("#productName");
+let productDes = document.querySelector("#productDes");
+let productPrice = document.querySelector("#productPrice");
 
 function search() {
 
-    let searchProduct = document.querySelector("#search-bar").value;
+    let searchProduct = document.querySelector("#searchBar").value;
     let cards = document.querySelectorAll(".card");
     for (let i = 0; i < cards.length; i++) {
         let lastChild = cards[i].lastChild;
@@ -25,7 +25,7 @@ function search() {
 }
 
 let starRating = document.createElement("div");
-starRating.className = "star-rating";
+starRating.className = "starRating";
     for (let item = 0; item < 5; item++) {
         let star = document.createElement("span");
         star.className = "fa fa-star";
@@ -36,7 +36,8 @@ productTitle.appendChild(starRating);
 function detailProduct(index){
     // prodIndex = prod;
     imageDetail.src = productStorage[index].image;
-    productName.textContent = productStorage[index].card_title;
+    imageDetail.addEventListener("click",hideDetail);
+    productName.textContent = productStorage[index].cardTitle;
     productDes.textContent = productStorage[index].description ;
     productPrice.textContent = productStorage[index].price + productStorage[index].currency;
     detail.style.display = "block";
@@ -48,13 +49,13 @@ function hideDetail(event){
     discount.style.display = "block";
     container.style.display = "block";
 }
-detail.addEventListener("click", hideDetail);
+// detail.addEventListener("click", hideDetail);
 
 function createElement(){
-    let card_container = document.querySelector(".card-container");
+    let card_container = document.querySelector(".cardContainer");
     card_container.remove();
     card_container = document.createElement("div");
-    card_container.className = "card-container";
+    card_container.className = "cardContainer";
     container.appendChild(card_container);
     for (let index in productStorage) {
         let value = productStorage[index];
@@ -72,11 +73,11 @@ function createElement(){
     
     
         let cardBody = document.createElement("div");
-        cardBody.className = "card-body";
+        cardBody.className = "cardBody";
     
         let text = document.createElement("h3");
-        text.className = "card-title";
-        text.textContent = value.card_title
+        text.className = "cardTitle";
+        text.textContent = value.cardTitle
         cardBody.appendChild(text);
     
         let price = document.createElement("p");
@@ -89,22 +90,22 @@ function createElement(){
         currency.textContent = value.currency;
         price.appendChild(currency);
     
-        let star_rate = document.createElement("div");
-        star_rate.className = "star-rate";
+        let starRate = document.createElement("div");
+        starRate.className = "starRate";
     
         for (let item = 0; item < 5; item++) {
             let star = document.createElement("span");
             star.className = "fa fa-star";
-            star_rate.appendChild(star);
+            starRate.appendChild(star);
         }
-        cardBody.appendChild(star_rate);
+        cardBody.appendChild(starRate);
         
         let btnContainer = document.createElement("div");
-        btnContainer.className = "btn-container";
+        btnContainer.className = "btnContainer";
         cardBody.appendChild(btnContainer);
 
         let btnBuy = document.createElement("button");
-        btnBuy.className = "btn-Buy";
+        btnBuy.className = "btnBuy";
         btnBuy.textContent = "Buy Now";
         btnContainer.appendChild(btnBuy);
 
@@ -128,7 +129,7 @@ function dropDownUser() {
   // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
-        let dropdowns = document.getElementsByClassName("dropdown-content");
+        let dropdowns = document.getElementsByClassName("dropdownContent");
         let i;
         for (i = 0; i < dropdowns.length; i++) {
             let openDropdown = dropdowns[i];
