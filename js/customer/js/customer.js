@@ -24,11 +24,11 @@ let cartContainer = document.querySelector("#CartContainer");
 // old product==========================================================================
 let productLists = [
     {
-        cardTitle: "Ipad",
+        cardTitle: "Ferrari LaFerrari",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        price: 1200,
+        price: 2008000,
         currency: "$",
-        image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
+        image: "https://wallpapershome.com/images/wallpapers/ferrari-laferrari-5120x2880-5k-4k-wallpaper-hybrid-sports-car-concept-2124.jpg"
     },
     {
         cardTitle: "JaVis",
@@ -38,25 +38,25 @@ let productLists = [
         image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
     },
     {
-        cardTitle: "Iphone",
+        cardTitle: "BMW ACTIVE HYBRID E-BIKE",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        price: 1200,
+        price: 8000,
         currency: "$",
-        image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
+        image: "https://di-uploads-pod25.dealerinspire.com/bmwtoronto/uploads/2020/11/Ebike_Urban-Ebike.jpg"
     },
     {
-        cardTitle: "Iphone",
+        cardTitle: "BMW M 1000 RR",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        price: 1200,
+        price: 36800,
         currency: "$",
-        image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
+        image: "https://cdn.dicklovett.co.uk/uploads/new_vehicle/4_178_f.jpg?v=1661852717"
     },
     {
-        cardTitle: "Iphone",
+        cardTitle: "Lamborghini Huracan STO",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        price: 1200,
+        price: 1200000,
         currency: "$",
-        image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
+        image: "https://imgd.aeplcdn.com/1200x900/n/cw/ec/97705/huracan-sto-exterior-right-front-three-quarter-2.jpeg?q=75"
     },
     
 ]

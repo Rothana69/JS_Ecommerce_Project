@@ -6,18 +6,18 @@ const titleDialog = document.querySelector("#dialogTitle");
 
 let productLists = [
     {
-        cardTitle: "Iphone",
+        cardTitle: "Galaxy Watch5",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        price: 1200,
+        price: 800,
         currency: "$",
-        image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
+        image: "https://images.samsung.com/is/image/samsung/assets/us/2208/watches/hubpage-08022022/Watches_PCD_Half-Teaser_Body-comp_MO.jpg?$624_624_PNG$"
     },
     {
-        cardTitle: "Iphone",
+        cardTitle: "IWC SCHAFFHAUSEN WATCHES",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
         price: 1200,
         currency: "$",
-        image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
+        image: "https://www.watches-of-switzerland.co.uk/medias/iwc-davinci-collection-mar22.jpg?context=bWFzdGVyfHJvb3R8MTAxNTk2fGltYWdlL2pwZWd8aDM1L2g3Yy85MTUwMDY3Mjc3ODU0LmpwZ3wzODgyNjUzYTU5ZmU4NWM1NzhmNGVkNGRiMWZlMGE5MTc4NDkyN2NhZTlhYmE1YTdkNTZmYTc0NzU3N2E5ZGZh&imwidth=640"
     },
     {
         cardTitle: "Iphone",
