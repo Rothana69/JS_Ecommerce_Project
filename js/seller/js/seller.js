@@ -260,5 +260,6 @@ function deleteProduct(event) {
     saveData();
     readerData();
 }
+// saveData();
 loadProductLists();
 readerData();
