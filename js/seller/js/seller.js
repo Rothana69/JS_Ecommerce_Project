@@ -20,11 +20,11 @@ let productLists = [
         image: "https://www.watches-of-switzerland.co.uk/medias/iwc-davinci-collection-mar22.jpg?context=bWFzdGVyfHJvb3R8MTAxNTk2fGltYWdlL2pwZWd8aDM1L2g3Yy85MTUwMDY3Mjc3ODU0LmpwZ3wzODgyNjUzYTU5ZmU4NWM1NzhmNGVkNGRiMWZlMGE5MTc4NDkyN2NhZTlhYmE1YTdkNTZmYTc0NzU3N2E5ZGZh&imwidth=640"
     },
     {
-        cardTitle: "Iphone",
+        cardTitle: "RAIDER GE77 HX",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
         price: 1200,
         currency: "$",
-        image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
+        image: "https://asset.msi.com/resize/image/global/product/product_1652084089f186edc14f9d018b77a37b5aee4f5a5a.png62405b38c58fe0f07fcef2367d8a9ba1/400.png"
     },
     {
         cardTitle: "Iphone",
@@ -34,11 +34,11 @@ let productLists = [
         image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
     },
     {
-        cardTitle: "Iphone",
+        cardTitle: "A12 Bionic",
         description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        price: 1200,
+        price: 1450,
         currency: "$",
-        image: "https://www.vodafone.com.au/images/devices/apple/iphone-14-pro/iphone-14-pro-deep-purple-feature1-m.jpg"
+        image: "https://www.apple.com/newsroom/images/product/ipad/standard/apple_ipad-8th-gen_w-keyboard_09152020.jpg.og.jpg?202211022312"
     },
     
 ];
